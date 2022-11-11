@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <template id="app">
+      <h1 v-text="title"></h1>
+      <div v-html="htmlElement"></div>
+      <div>{{ reverseTitle }}</div>
+      <button v-on:click="handleClick('new Title')">change title</button>
+    </template>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
