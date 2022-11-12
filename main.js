@@ -3,17 +3,20 @@ const app = Vue.createApp({
   data() {
     return {
       title: "hello world",
-      htmlElement: "<a href='loftschool.com'>loftschool</a>",
+      subTtile: "this is subTtile",
     };
   },
-  computed: {
-    reverseTitle() {
-      return this.title.split("").reverse().join("");
+  watch: {
+    title(newVal, prevVal) {
+      this.subTtile = this.reverseSubTitle();
     },
   },
   methods: {
     handleClick(value) {
-      this.title = value;
+      this.title === value;
+    },
+    reverseSubTitle() {
+      return this.subTtile.split("").reverse().join("");
     },
   },
 });

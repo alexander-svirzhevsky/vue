@@ -11,9 +11,8 @@
 
     <template id="app">
       <h1 v-text="title"></h1>
-      <div v-html="htmlElement"></div>
-      <div>{{ reverseTitle }}</div>
-      <button v-on:click="handleClick('new Title')">change title</button>
+      <h2 v-text="subTtile"></h2>
+      <button @click="handleClick('updated title')">change title</button>
     </template>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
