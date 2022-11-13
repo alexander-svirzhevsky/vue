@@ -10,9 +10,12 @@
     <div id="root"></div>
 
     <template id="app">
-      <h1 v-text="title"></h1>
-      <h2 v-text="subTtile"></h2>
-      <button @click="handleClick('updated title')">change title</button>
+      <ul>
+        <li v-for="(item, key) in filteredBySallary" :key="item.value">
+          <span>{{ item.name }}</span>
+          <p>{{ item.sallary }}</p>
+        </li>
+      </ul>
     </template>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
