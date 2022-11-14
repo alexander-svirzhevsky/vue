@@ -1,22 +1,28 @@
 const container = {
   template: "#container",
-  data() {
-    return {
-      list: ["one", "two", "three"],
-    };
+  emits: ["titleChanged"],
+  methods: {
+    handleClick() {
+      this.$emit("titleChanged", "new title", 1234);
+    },
   },
-};
-
-const child = {
-  template: "#child",
-  props: ["title"],
 };
 
 const app = Vue.createApp({
   template: "#app",
   components: {
     container,
-    child,
+  },
+  data() {
+    return {
+      title: "hello vue",
+    };
+  },
+  methods: {
+    handler(newTitle, randomInt) {
+      this.title = newTitle;
+      console.log(randomInt);
+    },
   },
 });
 

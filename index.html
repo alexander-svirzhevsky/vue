@@ -10,23 +10,14 @@
     <div id="root"></div>
 
     <template id="app">
-      <container>
-        <template #default="props">
-          <child :title="props.title"></child>
-        </template>
-      </container>
+      <div>{{title}}</div>
+      <container @title-changed="handler"></container>
     </template>
 
     <template id="container">
-      <ul v-for="item in list">
-        <li>
-          <slot :title="item"></slot>
-        </li>
-      </ul>
-    </template>
-
-    <template id="child">
-      <h2>{{title}}</h2>
+      <div>
+        <button @click="handleClick">change title</button>
+      </div>
     </template>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
