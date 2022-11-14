@@ -10,12 +10,23 @@
     <div id="root"></div>
 
     <template id="app">
-      <ul>
-        <li v-for="(item, key) in filteredBySallary" :key="item.value">
-          <span>{{ item.name }}</span>
-          <p>{{ item.sallary }}</p>
+      <container>
+        <template #default="props">
+          <child :title="props.title"></child>
+        </template>
+      </container>
+    </template>
+
+    <template id="container">
+      <ul v-for="item in list">
+        <li>
+          <slot :title="item"></slot>
         </li>
       </ul>
+    </template>
+
+    <template id="child">
+      <h2>{{title}}</h2>
     </template>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
